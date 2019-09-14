@@ -1,0 +1,66 @@
+{
+  "name": "map-marker-api",
+  "version": "1.0.0",
+  "description": "map-marker-api",
+  "main": "index.ts",
+  "scripts": {
+    "prebuild": "npm run test",
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "serve": "nodemon --exec ts-node src/index.ts",
+    "test": "DATABASE=mongodb://192.168.99.100:27017/map_markers_test nyc mocha -r ts-node/register ./src/**/*.test.ts --exit"
+  },
+  "author": "Rashid Azar",
+  "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.6",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/chai": "^4.1.7",
+    "@types/cors": "^2.8.5",
+    "@types/express": "^4.17.0",
+    "@types/mocha": "^5.2.7",
+    "@types/mongoose": "^5.5.9",
+    "@types/node": "^12.6.8",
+    "@types/passport": "^1.0.0",
+    "@types/supertest": "^2.0.8",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.test.ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}
