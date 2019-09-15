@@ -16,7 +16,7 @@
 * set env variables `PORT` and `DATABASE`. `PORT` is where the http server listens and `DATABASE` is the URL of mongodb
 * to start local mongodb server: `docker-compose up`. It will start mongodb listening on the port 27017 without and username or password
 * to start local dev server: `npm run serve`. It will start the server at port 8080 (if no `PORT` defined). Port may be configured by setting env variable `PORT`
-* create, update and delete requires basic authorization header. View and search are public. As of now username password is hard coded as username: plivo, password: dontknow
+* create, update and delete requires basic authorization header. View and search are public. As of now username password is hard coded as username: testuser, password: dontknow
 * Endpoints:
   * GET /markers : to search
   * POST /markers : to create marker

@@ -45,8 +45,6 @@ export const search_marker = async (req: Request, res: Response) => {
 
   let criteria = {};
   try {
-    // if(['name', 'email'].indexOf(field) === -1) field = '';
-    
     if(keyword) {
       criteria = {
         label : { $regex: keyword, $options: 'i' }
